@@ -6,21 +6,17 @@ module.exports = function getZerosCount(number, base) {
  
   var p=[];
   var index =[];
-  var tempnum = [];
   var temp,k = 0;
-  var min;
-  var num =0;
   
   
-		
 	
   for (i =0; i< pr.length ; i++){
 	  if (base < pr[i]) break;
 	  
 	  if (base % pr[i] === 0 )   {
-		  while (base % pr[i] === 0) {
-			 k++;
-			 base = base / pr[i];
+			while (base % pr[i] === 0) {
+				k++;
+				base = base / pr[i];
 		  }
 		  p.push(pr[i]);
 		  index.push(k);
@@ -28,38 +24,25 @@ module.exports = function getZerosCount(number, base) {
 	  }
   }
   
-      
+   // console.log('arr='+p);
+	//console.log('index='+index);
+	
   k=0;
     
-
-	for (i=0; i< p.length; i++){
-			for (a=2;a<= number; a++){
-				temp = a;
-				while (temp % p[i] === 0 ) {
-				k++;
-				temp = temp / p[i];
+ for (a=2;a<= number; a++){
+	 if (a % p[p.length-1] === 0) {
+			temp = a;
+			while (temp % p[p.length-1] === 0 ) {
+						k++;
+						temp = temp / p[p.length-1];
 				}
-			}
-							
-		tempnum.push(Math.floor(k/index[i]));
-		k=0;
-	}
-				
 			
-	min = tempnum[0];
-	if (tempnum.length > 1){
-		for (i=1; i<tempnum.length; i++)	{
-			if (tempnum[i]< min) min = tempnum[i];
-		}
-	} 
+			}
+	}
 	
-	num = min;  
-  	
-	   
-	console.log ("zeros="+min);  
-		
-  
-  return num;
+var num = Math.floor(k/index[index.length - 1]);
+//console.log ("zeros = "+ num);
+return num;
 
   // your implementation
 }
