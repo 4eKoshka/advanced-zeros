@@ -8,21 +8,21 @@ module.exports = function getZerosCount(number, base) {
   var index =[];
   var temp,k = 0;
   
-  /*
+  
 	
   for (i =0; i< pr.length ; i++){
 	  if (base < pr[i]) break;
 	  
-	  if (base % pr[i] === 0 )   {
+	  if (base % pr[i] === 0 )   /*{
 			while (base % pr[i] === 0) {
 				k++;
 				base = base / pr[i];
-		  }
+		  }*/
 		  p.push(pr[i]);
-		  index.push(k);
-		  k=0;
+		  //index.push(k);
+		  //k=0;
 	  }
-  }
+  
   
    // console.log('arr='+p);
 	//console.log('index='+index);
@@ -40,10 +40,10 @@ module.exports = function getZerosCount(number, base) {
 			}
 	}
 	
-var num = Math.floor(k/index[index.length - 1]);
+//var num = Math.floor(k/index[index.length - 1]);
 //console.log ("zeros = "+ num);
-return num;*/
-return 2;
+return k;
+
 
   // your implementation
 }
